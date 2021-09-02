@@ -3,7 +3,7 @@ var bowImage, arrowImage, green_balloonImage, red_balloonImage, pink_balloonImag
 
 var redB, blueB, greenB, pinkB, arrowGroup
 
-var score=0;
+var score
 
 function preload(){
   
@@ -32,7 +32,12 @@ function setup() {
   bow.addImage(bowImage); 
   bow.scale = 1;
   
-   score = 0    
+   score = 0  
+  redB = new Group()
+  blueB = new Group()
+  greenB = new Group()
+  pinkB = new Group()
+  arrowGroup = new Group()  
 }
 
 function draw() {
@@ -67,11 +72,7 @@ function draw() {
       pinkBalloon();
     }
   }  
-  redB = new Group()
-  blueB = new Group()
-  greenB = new Group()
-  pinkB = new Group()
-  arrowGroup = new Group()
+  
 
 
     
@@ -95,6 +96,7 @@ function draw() {
   arrow.velocityX = -4;
   arrow.lifetime = 100;
   arrow.scale = 0.3;
+  arrowGroup.add(arrow)
 }
 
 function redBalloon() {
@@ -103,6 +105,7 @@ function redBalloon() {
   red.velocityX = 3;
   red.lifetime = 150;
   red.scale = 0.1;
+  redB.add(red)
 }
 
 function blueBalloon() {
@@ -111,6 +114,7 @@ function blueBalloon() {
   blue.velocityX = 3;
   blue.lifetime = 150;
   blue.scale = 0.1;
+  blueB.add(blue)
 }
 
 function greenBalloon() {
@@ -119,6 +123,7 @@ function greenBalloon() {
   green.velocityX = 3;
   green.lifetime = 150;
   green.scale = 0.1;
+  greenB.add(green)
 }
 
 function pinkBalloon() {
@@ -127,4 +132,5 @@ function pinkBalloon() {
   pink.velocityX = 3;
   pink.lifetime = 150;
   pink.scale = 1
+  pinkB.add(pink)
 }
